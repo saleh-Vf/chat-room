@@ -6,11 +6,11 @@ import java.util.ArrayList;
 public class Database {
     private static Database database ;
     private ArrayList<Socket> sockets = null;
-    private ArrayList<Message> messages = null;
+    private ArrayList<Message> messages = new ArrayList<>();;
 //    users
 
     Database(){
-        this.messages = new ArrayList<>();
+//        this.messages = new ArrayList<>();
         sockets = new ArrayList<>();
 
     }

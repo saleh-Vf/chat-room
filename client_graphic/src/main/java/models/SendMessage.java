@@ -2,7 +2,6 @@ package models;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.Scanner;
 
 public class SendMessage extends Thread {
     private Message message;
@@ -11,11 +10,6 @@ public class SendMessage extends Thread {
     @Override
     public void run() {
         while (true){
-//            System.out.println("enter text: ");
-//            Scanner sc = new Scanner(System.in);
-//            String content = sc.nextLine();
-//            message = new Message("owner",content);
-
             try {
 
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(SingelSocket.getSocket().getOutputStream());

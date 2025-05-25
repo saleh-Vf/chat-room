@@ -21,7 +21,7 @@ public class GetMessage extends Thread {
                 ObjectInputStream objectInputStream = new ObjectInputStream(SingelSocket.getSocket().getInputStream());
                 Message message = (Message) objectInputStream.readObject();
                 System.out.println(message.getOwner() + ":\t" + message.getContent());
-                Parent card = MessageCard.createMessageCard(message.getOwner(), message.getContent());
+                Parent card = MessageCard.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
 
                 Platform.runLater(() -> {
                     vbox.getChildren().add(card);

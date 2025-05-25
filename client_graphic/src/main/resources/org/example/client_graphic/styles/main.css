@@ -93,7 +93,7 @@
     -fx-padding: 10px;
     -fx-padding: 10px;
     -fx-max-width: 600px;
-    -fx-alignment: TOP_LEFT;
+    -fx-alignment: TOP_RIGHT;
 }
 #content {
     -fx-wrap-text: true;

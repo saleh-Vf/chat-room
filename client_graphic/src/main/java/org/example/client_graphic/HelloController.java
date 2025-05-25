@@ -5,6 +5,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.URL;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -44,7 +45,7 @@ public class HelloController {
     @FXML
     void sendMessage(ActionEvent event) throws IOException, ClassNotFoundException {
 //        System.out.println("hi");
-        Message message = new Message("saleh", input.getText());
+        Message message = new Message("saleh", input.getText(), LocalTime.now());
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objectOutputStream.writeObject(message);
         this.input.setText("");
@@ -76,7 +77,7 @@ public class HelloController {
         ArrayList<Message> messages = (ArrayList<Message>) objectInputStream.readObject();
         if (!messages.isEmpty()) {
             for (Message message : messages) {
-                Parent card = MessageCard.createMessageCard(message.getOwner(), message.getContent());
+                Parent card = MessageCard.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
                 messageContainer.getChildren().add(card);
             }
         }
