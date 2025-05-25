@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.Message;
+import models.User;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -18,6 +19,7 @@ public class HelloApplication extends Application {
 //        Socket socket = new Socket("localhost",8001);
 //        DataInputStream dataInputStream= new DataInputStream(socket.getInputStream());
 //        System.out.println(dataInputStream.readUTF());
+        User user = User.getuser("saleh");
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("chat_page.fxml"));
 

@@ -75,9 +75,16 @@ public class HelloController {
         scrollPane.setFitToWidth(true);
         ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
         ArrayList<Message> messages = (ArrayList<Message>) objectInputStream.readObject();
+        User user = User.getuser();
         if (!messages.isEmpty()) {
             for (Message message : messages) {
-                Parent card = MessageCard.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
+                Parent card ;
+                if (message.getOwner().equals(user.getName())){
+                    card= MessageCardSelf.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
+                }else {
+                    card= MessageCard.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
+
+                }
                 messageContainer.getChildren().add(card);
             }
         }

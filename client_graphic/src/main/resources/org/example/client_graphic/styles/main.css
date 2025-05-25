@@ -95,6 +95,16 @@
     -fx-max-width: 600px;
     -fx-alignment: TOP_RIGHT;
 }
+#messageCardSelf{
+    -fx-background-color: red;
+    -fx-border-color: #b2ebf2;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 10px;
+    -fx-padding: 10px;
+    -fx-max-width: 600px;
+    -fx-alignment: TOP_RIGHT;
+}
 #content {
     -fx-wrap-text: true;
 }
