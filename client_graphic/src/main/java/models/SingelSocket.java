@@ -19,7 +19,6 @@ public class SingelSocket {
     }
 
     public static void getMessages() throws IOException, ClassNotFoundException {
-        System.out.println("ok");
 //        ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
 //        ArrayList<Message> messages = (ArrayList<Message>) objectInputStream.readObject();
 //        System.out.println(messages.size());

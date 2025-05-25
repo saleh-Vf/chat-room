@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -14,18 +15,18 @@
    <children>
       <VBox prefHeight="502.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="716.0" VBox.vgrow="NEVER">
+            <StackPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" prefWidth="716.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="105.0" text="Chat room" textFill="WHITE">
+                  <Label prefHeight="42.0" prefWidth="105.0" text="Chat room" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
                </children>
-            </HBox>
-            <AnchorPane prefHeight="565.0" prefWidth="716.0" VBox.vgrow="ALWAYS">
+            </StackPane>
+            <AnchorPane prefHeight="364.0" prefWidth="716.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane fx:id="scrollPane" prefHeight="414.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane fx:id="scrollPane" layoutY="17.0" prefHeight="390.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
                         <VBox fx:id="messageContainer" prefWidth="705.0" spacing="20.0">
                            <padding>
@@ -38,7 +39,11 @@
             <AnchorPane prefHeight="161.0" prefWidth="716.0" VBox.vgrow="NEVER">
                <children>
                   <TextField fx:id="input" onAction="#sendMessage" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="80.0" />
-                  <Button mnemonicParsing="false" onAction="#sendMessage" text="Button" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="679.0" layoutY="97.0" onMouseClicked="#sendMessage" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
+                     <image>
+                        <Image url="@images/paper-plane.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

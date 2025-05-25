@@ -43,9 +43,9 @@ public class HelloController {
     }
 
     @FXML
-    void sendMessage(ActionEvent event) throws IOException, ClassNotFoundException {
+    void sendMessage() throws IOException, ClassNotFoundException {
 //        System.out.println("hi");
-        Message message = new Message("saleh", input.getText(), LocalTime.now());
+        Message message = new Message(User.getName(), input.getText());
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objectOutputStream.writeObject(message);
         this.input.setText("");
@@ -75,13 +75,16 @@ public class HelloController {
         scrollPane.setFitToWidth(true);
         ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
         ArrayList<Message> messages = (ArrayList<Message>) objectInputStream.readObject();
-        User user = User.getuser();
         if (!messages.isEmpty()) {
             for (Message message : messages) {
+                System.out.println(User.getName());
                 Parent card ;
-                if (message.getOwner().equals(user.getName())){
+                if (message.getOwner().equals(User.getName())){
+                    System.out.println("eq");
                     card= MessageCardSelf.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
                 }else {
+//                    System.out.println(message.getOwner());
+//                    System.out.println(User.getName());
                     card= MessageCard.createMessageCard(message.getOwner(), message.getContent(),message.getTime());
 
                 }

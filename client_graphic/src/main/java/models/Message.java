@@ -10,7 +10,7 @@ public class Message implements Serializable {
     private String content;
     private LocalTime time;
 
-    public Message(String owner, String content, LocalTime now){
+    public Message(String owner, String content){
         this.content = content;
         this.owner = owner;
         this.time = LocalTime.now();

@@ -23,22 +23,25 @@ public class MessageCard {
         content.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         content.setMaxWidth(600);
         content.setPrefHeight(Region.USE_COMPUTED_SIZE);
+        content.setId("content");
 
         AnchorPane.setTopAnchor(content, 26.0);
         AnchorPane.setLeftAnchor(content, 30.0);
-        AnchorPane.setRightAnchor(content, 30.0);
+        AnchorPane.setRightAnchor(content, 20D);
         AnchorPane.setBottomAnchor(content, 30.0);
 
         // نام فرستنده
         Label name = new Label(nameText);
         AnchorPane.setTopAnchor(name, 2.0);
         AnchorPane.setRightAnchor(name, 2.0);
+        name.setId("name");
 
         // زمان ارسال
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         Label time = new Label(timeOfSend.format(formatter));
         AnchorPane.setBottomAnchor(time, 2.0);
         AnchorPane.setLeftAnchor(time, 2.0);
+        time.setId("time");
 
         messageContainer.getChildren().addAll(content, name, time);
 

@@ -16,15 +16,17 @@ public class GetMessage extends Thread {
 
     @Override
     public void run() {
+
         while (true) {
             try {
-                User user = User.getuser();
+
 
                 ObjectInputStream objectInputStream = new ObjectInputStream(SingelSocket.getSocket().getInputStream());
                 Message message = (Message) objectInputStream.readObject();
                 System.out.println(message.getOwner() + ":\t" + message.getContent());
                 Parent card ;
-                if (message.getOwner().equals(user.getName())) {
+                System.out.println(message.getOwner()+"\t"+User.getName());
+                if (message.getOwner().equals(User.getName())) {
                     card = MessageCardSelf.createMessageCard(message.getOwner(), message.getContent(), message.getTime());
                 } else {
                     card = MessageCard.createMessageCard(message.getOwner(), message.getContent(), message.getTime());

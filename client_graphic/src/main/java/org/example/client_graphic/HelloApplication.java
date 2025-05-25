@@ -14,14 +14,15 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class HelloApplication extends Application {
+    public static Stage stage;
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
+        HelloApplication.stage = stage;
 //        Socket socket = new Socket("localhost",8001);
 //        DataInputStream dataInputStream= new DataInputStream(socket.getInputStream());
 //        System.out.println(dataInputStream.readUTF());
-        User user = User.getuser("saleh");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("chat_page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("styles/main.css").toExternalForm());
