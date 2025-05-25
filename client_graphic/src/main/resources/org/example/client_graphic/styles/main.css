@@ -87,3 +87,17 @@
     -fx-alignment: center-left;
     -fx-node-orientation: left-to-right;
 }
+
+#messageCard {
+    -fx-background-color: #e0f7fa;
+    -fx-border-color: #b2ebf2;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 10px;
+    -fx-padding: 10px;
+    -fx-max-width: 300px;
+    -fx-alignment: TOP_LEFT;
+}
+#content {
+    -fx-wrap-text: true;
+}

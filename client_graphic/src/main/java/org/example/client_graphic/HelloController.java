@@ -16,10 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import models.GetMessage;
-import models.Message;
-import models.SendMessage;
-import models.SingelSocket;
+import models.*;
 
 public class HelloController {
     SingelSocket singelSocket = SingelSocket.getSingelSocket();
@@ -79,13 +76,8 @@ public class HelloController {
         ArrayList<Message> messages = (ArrayList<Message>) objectInputStream.readObject();
         if (!messages.isEmpty()) {
             for (Message message:messages) {
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("message.fxml"));
-                    Parent card = fxmlLoader.load();
-                    messageContainer.getChildren().add(card);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Parent card = MessageCard.createMessageCard(message.getOwner(),message.getContent());
+                messageContainer.getChildren().add(card);
             }
         }
 
