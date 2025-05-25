@@ -13,7 +13,7 @@
    <children>
       <VBox prefHeight="502.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="716.0" VBox.vgrow="NEVER">
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="716.0" VBox.vgrow="NEVER">
                <children>
                   <Label prefHeight="27.0" prefWidth="105.0" text="Chat room" textFill="WHITE">
                      <font>
@@ -22,9 +22,12 @@
                   </Label>
                </children>
             </HBox>
-            <AnchorPane prefWidth="716.0" VBox.vgrow="ALWAYS">
+            <AnchorPane prefHeight="565.0" prefWidth="716.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane fx:id="scrollPane" prefHeight="342.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ScrollPane fx:id="scrollPane" prefHeight="414.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <VBox fx:id="messageContainer" prefWidth="705.0" spacing="20.0" style="-fx-background-color: red;" />
+                     </content></ScrollPane>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="161.0" prefWidth="716.0" VBox.vgrow="NEVER">
