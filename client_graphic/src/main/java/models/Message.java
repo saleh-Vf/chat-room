@@ -8,7 +8,7 @@ public class Message implements Serializable {
     private String owner;
     private String content;
 
-    Message(String owner, String content){
+    public Message(String owner, String content){
         this.content = content;
         this.owner = owner;
     }

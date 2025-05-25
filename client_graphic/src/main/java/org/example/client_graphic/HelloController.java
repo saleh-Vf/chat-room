@@ -43,12 +43,12 @@ public class HelloController {
 
     @FXML
     void sendMessage(ActionEvent event) throws IOException, ClassNotFoundException {
-        System.out.println("hi");
-//        Message message = new Message("owner",input.getText());
-//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-//        objectOutputStream.writeObject(message);
+//        System.out.println("hi");
+        Message message = new Message("saleh", input.getText());
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+        objectOutputStream.writeObject(message);
+        this.input.setText("");
 
-//        GetMessage getMessage = new GetMessage();
 //        SendMessage sendMessage = new SendMessage();
 //
 //        getMessage.start();
@@ -75,16 +75,21 @@ public class HelloController {
         ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
         ArrayList<Message> messages = (ArrayList<Message>) objectInputStream.readObject();
         if (!messages.isEmpty()) {
-            for (Message message:messages) {
-                Parent card = MessageCard.createMessageCard(message.getOwner(),message.getContent());
+            for (Message message : messages) {
+                Parent card = MessageCard.createMessageCard(message.getOwner(), message.getContent());
                 messageContainer.getChildren().add(card);
             }
         }
+
+        GetMessage getMessage = new GetMessage(messageContainer);
+        getMessage.start();
 
 
         assert input != null : "fx:id=\"input\" was not injected: check your FXML file 'chat_page.fxml'.";
         assert scrollPane != null : "fx:id=\"scrollPane\" was not injected: check your FXML file 'chat_page.fxml'.";
 
     }
+
+
 
 }

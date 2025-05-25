@@ -4,9 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="messageContainer" prefHeight="118.0" prefWidth="176.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.client_graphic.messageController">
+<AnchorPane fx:id="messageContainer" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.client_graphic.messageController">
    <children>
-      <Label fx:id="content" layoutX="40.0" layoutY="36.0" prefHeight="62.0" prefWidth="116.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="26.0" />
+      <Label fx:id="content" layoutX="40.0" layoutY="36.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="26.0" />
       <Label fx:id="name" layoutX="120.0" layoutY="7.0" text="Label" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
       <Label fx:id="time" layoutX="8.0" layoutY="101.0" text="Label" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />
    </children>
