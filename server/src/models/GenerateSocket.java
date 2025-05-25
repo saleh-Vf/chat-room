@@ -22,9 +22,9 @@ public class GenerateSocket extends Thread {
                 database.setSockets(currentSocket);
                 ObjectOutputStream outputStream = new ObjectOutputStream(this.currentSocket.getOutputStream());
                 outputStream.writeObject(database.getMessages());
+
                 GetMessage getSocket = new GetMessage(currentSocket);
                 getSocket.start();
-//                System.out.println(Database.getSockets().size());
 
 
             } catch (IOException e) {

@@ -33,6 +33,9 @@ public class Database {
     public ArrayList<Message> getMessages() {
         return messages;
     }
+    public void removeSocket(Socket failedSocket){
+        this.sockets.remove(failedSocket);
+    }
 
     public void setMessages(Message message) {
         this.messages.add(message);

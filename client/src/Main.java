@@ -26,17 +26,15 @@ public class Main {
 
         if (messages != null){
             for (Message message : messages){
-                System.out.println(message.getContent());
+                System.out.println(message.getOwner()+":\t"+message.getContent());
             }
         }
 
-//        while (true){
             GetMessage getMessage = new GetMessage();
             SendMessage sendMessage = new SendMessage();
 
             getMessage.start();
             sendMessage.start();
-//        }
 
     }
 

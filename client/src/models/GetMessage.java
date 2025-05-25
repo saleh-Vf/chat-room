@@ -13,7 +13,7 @@ public class GetMessage extends Thread {
             try {
             ObjectInputStream objectInputStream = new ObjectInputStream(SingelSocket.getSocket().getInputStream());
             Message message = (Message) objectInputStream.readObject();
-            System.out.println(message.getContent());
+            System.out.println(message.getOwner()+":\t"+message.getContent());
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
