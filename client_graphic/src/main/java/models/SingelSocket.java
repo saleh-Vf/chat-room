@@ -10,7 +10,7 @@ public class SingelSocket {
     static Socket socket;
 
     private SingelSocket() throws IOException {
-        this.socket = new Socket("localhost", 8001);
+        this.socket = new Socket("141.11.0.80", 8001);
     }
 
     public static SingelSocket getSingelSocket() throws IOException {
